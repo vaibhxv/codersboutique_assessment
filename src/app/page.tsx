@@ -86,35 +86,36 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-200">
-      <Navbar />
-      <div className="container mx-auto p-4 sm:p-6 lg:p-8">
-        <div className="bg-white shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg overflow-hidden mb-8">
-          <div className="p-6 sm:p-10">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-8 font-serif">Today's Tasks</h1>
-            <AddTaskForm onAddTask={handleAddTask} />
-            <TaskList
-              tasks={activeTasks}
-              onUpdateTask={handleUpdateTask}
-              onDeleteTask={(id: string) => handleDeleteTask(id, false)}
-              onEditTask={handleEditTask}
-              isCompleted={false}
-            />
-          </div>
+    <Navbar />
+    <div className="container mx-auto p-4 sm:p-6 lg:p-8">
+      <div className="bg-white shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg overflow-hidden mb-4"> {/* Reduced mb-8 to mb-4 */}
+        <div className="p-6 sm:p-10">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-8 font-serif">Today's Tasks</h1>
+          <AddTaskForm onAddTask={handleAddTask} />
+          <TaskList
+            tasks={activeTasks}
+            onUpdateTask={handleUpdateTask}
+            onDeleteTask={(id: string) => handleDeleteTask(id, false)}
+            onEditTask={handleEditTask}
+            isCompleted={false}
+          />
         </div>
-        
-        <div className="bg-white shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg overflow-hidden">
-          <div className="p-6 sm:p-10">
-            <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-6 font-serif">Completed Tasks</h2>
-            <TaskList
-              tasks={completedTasks}
-              onUpdateTask={handleUpdateTask}
-              onDeleteTask={(id: string) => handleDeleteTask(id, true)}
-              onEditTask={handleEditTask}
-              isCompleted={true}
-            />
-          </div>
+      </div>
+      
+      <div className="bg-white shadow-[0_0_20px_rgba(0,0,0,0.1)] rounded-lg overflow-hidden mt-4"> {/* Added mt-4 to reduce gap */}
+        <div className="p-6 sm:p-10">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 font-serif">Completed Tasks</h2> {/* Removed mt-12 */}
+          <TaskList
+            tasks={completedTasks}
+            onUpdateTask={handleUpdateTask}
+            onDeleteTask={(id: string) => handleDeleteTask(id, true)}
+            onEditTask={handleEditTask}
+            isCompleted={true}
+          />
         </div>
       </div>
     </div>
+  </div>
+  
   );
 }
