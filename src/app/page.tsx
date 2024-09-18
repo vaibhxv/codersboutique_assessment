@@ -43,14 +43,12 @@ export default function Home() {
   const handleUpdateTask = async (id: string, status: boolean): Promise<void> => {
     await updateTask(id, status);
     if (status) {
-      // Move to completed list
       const taskToMove = activeTasks.find(task => task.id === id);
       if (taskToMove) {
         setActiveTasks((prev: Task[]) => prev.filter(task => task.id !== id));
         setCompletedTasks((prev: Task[]) => [...prev, { ...taskToMove, status: true }]);
       }
     } else {
-      // Move back to active list
       const taskToMove = completedTasks.find(task => task.id === id);
       if (taskToMove) {
         setCompletedTasks((prev: Task[]) => prev.filter(task => task.id !== id));

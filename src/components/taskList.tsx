@@ -58,11 +58,13 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onUpdateTask, onDeleteTask, 
     }
   };
 
+  const sortedTasks = [...tasks].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
   return (
     <>
       <AnimatePresence>
         <ul className="space-y-4">
-          {tasks.map((task) => (
+          {sortedTasks.map((task) => (
             <motion.li
               key={task.id}
               initial={{ opacity: 0, y: -10 }}
