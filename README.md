@@ -2,7 +2,7 @@
 
 Elegant Tasks is a sleek, responsive to-do application built with Next.js, React, and Supabase. It offers a clean and intuitive interface for managing your daily tasks efficiently.
 
-![Elegant Tasks Screenshot](https://drive.google.com/file/d/1Bgar34PYYA_JyRajV4iI0of4J99Zvfza/preview)
+<iframe src="https://drive.google.com/file/d/1Bgar34PYYA_JyRajV4iI0of4J99Zvfza/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Features
 
