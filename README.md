@@ -33,8 +33,8 @@ Elegant Tasks is a sleek, responsive to-do application built with Next.js, React
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/elegant-tasks.git
-   cd elegant-tasks
+   git clone https://github.com/vaibhxv/codersboutique_assessment.git
+   cd codersboutique_assessment
    ```
 
 2. Install dependencies:
