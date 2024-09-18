@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { PlusCircle } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast"
+
 
 interface AddTaskFormProps {
   onAddTask: (task: string) => void;
@@ -9,9 +11,19 @@ interface AddTaskFormProps {
 
 const AddTaskForm: React.FC<AddTaskFormProps> = ({ onAddTask }) => {
   const [newTask, setNewTask] = useState('');
+  const { toast } = useToast()
 
-  const handleSubmit = (e: React.FormEvent) => {
+   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (newTask.trim() === '') {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Enter a new task to add.",
+        
+        
+      })
+      return;
+    }
     onAddTask(newTask);
     setNewTask('');
   };
