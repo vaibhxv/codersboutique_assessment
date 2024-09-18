@@ -48,7 +48,7 @@ Elegant Tasks is a sleek, responsive to-do application built with Next.js, React
    Create a `.env.local` file in the root directory and add your Supabase credentials:
    ```
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   NEXT_PUBLIC_SUPABASE_KEY=your_supabase_key
    ```
 
 4. Run the development server:
@@ -67,11 +67,6 @@ Elegant Tasks is a sleek, responsive to-do application built with Next.js, React
 - **Editing a Task**: Click the edit button (pencil icon) to modify the task text.
 - **Deleting a Task**: Click the delete button (trash icon) and confirm to remove a task.
 - **Undoing a Completed Task**: In the "Completed Tasks" section, click the undo button to move a task back to active tasks.
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgements
 
