@@ -17,7 +17,7 @@ export const getTasks = async () => {
 export const addTask = async (task: string) => {
   const { data, error } = await supabase
     .from('tasks')
-    .insert([{ task, status: false }]);
+    .insert([{ task, status: false, created_at: new Date().toISOString() }]);
 
   if (error) {
     console.error(error);
